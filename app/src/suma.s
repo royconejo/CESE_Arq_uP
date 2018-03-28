@@ -70,9 +70,9 @@
 */
 
 asmSum:
-    push {lr}  /* guardamos la direccion de retorno en la pila */
-	add r0, r1 /* r0 = r0 + r1 */
-	pop {pc}   /* retorno */
+        push {lr}  /* guardamos la direccion de retorno en la pila */
+        add r0, r1 /* r0 = r0 + r1 */
+        pop {pc}   /* retorno */
 
 	/* otras alternativas para el retorno */
 	/* 1. mov pc,lr
