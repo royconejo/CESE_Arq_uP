@@ -9,7 +9,7 @@ s_zeros:
         cbz r1, end         // vuelve si elementos es cero
 
         mov r2, $0          // r2 = cero
-        and r3, r1, 0x0F    // r3 = r1 & 0x0F   (r3 = r1 MOD 8)
+        and r3, r1, 0x07    // r3 = r1 & 0x07   (r3 = r1 MOD 8)
         sub r1, r1, r3      // r1 -= r3
         cbz r1, loop1       // menor o igual a 8 elementos
     loop8:
