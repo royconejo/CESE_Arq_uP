@@ -1,7 +1,7 @@
 #include "zeros.h"
 
 
-#define VEC_SIZE    100
+#define VEC_SIZE    1000
 static uint32_t     vec[VEC_SIZE];
 
 
