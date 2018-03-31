@@ -9,7 +9,7 @@ static void testClear ()
 {
     for (uint32_t i = 0; i < VEC_SIZE; ++i)
     {
-        vec[i] = 0xCACAAAAA | ((i+1) & 0xFFFF);
+        vec[i] = 0xCACA0000 | (((i+1) & 0xFFFF));
     }
 }
 
