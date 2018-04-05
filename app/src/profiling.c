@@ -45,12 +45,16 @@ void profilingDone (struct profiling_t *pr)
 
     // TODO: tener en cuenta pr->functionCalls e iterations
 
-    pr->c.cycles = (pr->c.cycles >= profilingOverhead)?
-                pr->c.cycles -= profilingOverhead : pr->c.cycles;
+    if (pr->c.cycles >= profilingOverhead)
+    {
+        pr->c.cycles -= profilingOverhead;
+    }
 
-    pr->s.cycles = (pr->s.cycles >= profilingOverhead)?
-                pr->s.cycles -= profilingOverhead : pr->s.cycles;
+    if (pr->s.cycles >= profilingOverhead)
+    {
+        pr->s.cycles -= profilingOverhead;
+    }
 
-    pr->c.ns    = (((double)pr->c.cycles / (double)SystemCoreClock) * 1000000000.0);
-    pr->s.ns    = (((double)pr->s.cycles / (double)SystemCoreClock) * 1000000000.0);
+    pr->c.ns = (uint32_t) (((double)pr->c.cycles / (double)SystemCoreClock) * 1000000000.0);
+    pr->s.ns = (uint32_t) (((double)pr->s.cycles / (double)SystemCoreClock) * 1000000000.0);
 }

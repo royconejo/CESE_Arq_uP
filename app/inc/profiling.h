@@ -4,7 +4,7 @@
 
 #define PROFILE_FUNCTION(pr,l,f,...) \
     DWT->CYCCNT = 0; \
-    l##_zeros (__VA_ARGS__); \
+    l##_##f (__VA_ARGS__); \
     pr-> l .cycles = DWT->CYCCNT;
 
 
