@@ -2,13 +2,23 @@
 .syntax unified
 .thumb
 .text
-.global s_filtroVentana10
+.global s_eco
 
+/*
+    ldr  r1, =0xABABABAB
+    @ Parte de arriba se vuelve 0 o se mantiene?
+    @ --> se vuelve 0: 0x000000FF
+    ldrb r1, =0xFF                  @ +2    0 ns        Carga pixel
+    lsr  r3, r1, #7                 @ Rxxxxxxx  ->  0000000R
+    lsl  r3, #8                     @ 0000000R00000000
+    orr  r1, r3                     @ 0000000RxRRGGGBB
+*/
 
-@ r0 = vectorIn, r1 = vectorOut, v2 = longitudVectorIn
+@ r0 = vectorIn, r1 = vectorOut, longitud de vector SIEMPRE es 4096
 .thumb_func
-    s_filtroVentana10:
+    s_eco:
             push {r4}
+
 
             cbz  r0, .end           @ vuelve si el puntero vectorIn es cero
             cbz  r1, .end           @ vuelve si el puntero vectorOut es cero

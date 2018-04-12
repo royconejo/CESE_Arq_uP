@@ -2,12 +2,12 @@
 .syntax unified
 .thumb
 .text
-.global s_filtroVentana10
+.global s_correlacionCruzada
 
 
 @ r0 = vectorIn, r1 = vectorOut, v2 = longitudVectorIn
 .thumb_func
-    s_filtroVentana10:
+    s_correlacionCruzada:
             push {r4}
 
             cbz  r0, .end           @ vuelve si el puntero vectorIn es cero
