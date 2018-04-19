@@ -6,6 +6,7 @@
 #include "productoEscalar12.h"
 #include "filtroVentana10.h"
 #include "eco.h"
+#include "ajustarBrillo.h"
 
 
 static void initHardware ()
@@ -27,6 +28,7 @@ int main ()
     test_productoEscalar32  (&pr);
     test_filtroVentana10    (&pr);
     test_eco                (&pr);
+    test_ajustarBrillo      (&pr);
 
 	while (1)
 	{
